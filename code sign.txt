@@ -1,0 +1,546 @@
+Question 1 of 4
+1:00:03
+Codewriting
+
+Given an integer n and an array a of length n, your task is to apply the following mutation to a:
+
+Array a mutates into a new array b of length n.
+For each i from 0 to n - 1, b[i] = a[i - 1] + a[i] + a[i + 1].
+If some element in the sum a[i - 1] + a[i] + a[i + 1] does not exist, it should be set to 0. For example, b[0] should be equal to 0 + a[0] + a[1].
+Example
+
+For n = 5 and a = [4, 0, 1, -2, 3], the output should be solution(n, a) = [4, 5, -1, 2, 1].
+
+b[0] = 0 + a[0] + a[1] = 0 + 4 + 0 = 4
+b[1] = a[0] + a[1] + a[2] = 4 + 0 + 1 = 5
+b[2] = a[1] + a[2] + a[3] = 0 + 1 + (-2) = -1
+b[3] = a[2] + a[3] + a[4] = 1 + (-2) + 3 = 2
+b[4] = a[3] + a[4] + 0 = (-2) + 3 + 0 = 1
+So, the resulting array after the mutation will be [4, 5, -1, 2, 1].
+
+Input/Output
+
+[execution time limit] 3 seconds (java)
+
+[input] integer n
+
+An integer representing the length of the given array.
+
+Guaranteed constraints:
+1 ≤ n ≤ 103.
+
+[input] array.integer ax	
+
+An array of integers that needs to be mutated.
+
+Guaranteed constraints:
+a.length = n,
+-103 ≤ a[i] ≤ 103.
+
+[output] array.integer
+
+The resulting array after the mutation.
+
+[Java] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+// 
+// Globals declared here will cause a compilation error,
+// declare variables inside the function instead!
+String helloWorld(String name) {
+    System.out.println("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+
+SOLUTION:
+public class LC {
+	static int[] solution(int n, int[] a) {
+	    int b[] = new int[n];
+	    if(n==1){
+	    	System.out.println(Arrays.toString(a));
+	        return a;
+	    }
+	    for(int i=0; i<n;i++){
+	        
+	        if(i==0) {
+	        	b[i] = 0+a[i]+a[i+1];
+	        }
+	        else if(i==n-1) {
+	        	b[i] = a[i-1]+a[i]+0;
+	        }
+	        else {
+	        	b[i] = a[i-1]+a[i]+a[i+1];
+	        }
+	    }
+	    System.out.println(Arrays.toString(b));
+	    return b;
+	}
+
+	public static void main(String[] args) {
+		int[] a = {4};
+		solution(1,a);
+		
+	}
+}
+
+
+TESTS
+CUSTOM TESTS
+MORE
+0/300
+n : int
+---------------------------------------------------------------------------------------------------------
+Question 2 of 4
+0:54:56
+Codewriting
+
+You are given two arrays of integers a and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously through array b from right to left, and looking at pairs (x, y), where x is from a and y is from b. Such a pair is called tiny if the concatenation xy is strictly less than k.
+
+Your task is to return the number of tiny pairs that you'll encounter during the simultaneous iteration through a and b.
+
+Example
+
+For a = [1, 2, 3], b = [1, 2, 3], and k = 31, the output should be
+solution(a, b, k) = 2.
+
+We're considering the following pairs during iteration:
+
+(1, 3). Their concatenation equals 13, which is less than 31, so the pair is tiny;
+(2, 2). Their concatenation equals 22, which is less than 31, so the pair is tiny;
+(3, 1). Their concatenation equals 31, which is not less than 31, so the pair is not tiny.
+As you can see, there are 2 tiny pairs during the iteration, so the answer is 2.
+
+For a = [16, 1, 4, 2, 14], b = [7, 11, 2, 0, 15], and k = 743, the output should be
+solution(a, b, k) = 4.
+
+We're considering the following pairs during iteration:
+
+(16, 15). Their concatenation equals 1615, which is greater than 743, so the pair is not tiny;
+(1, 0). Their concatenation equals 10, which is less than 743, so the pair is tiny;
+(4, 2). Their concatenation equals 42, which is less than 743, so the pair is tiny.
+(2, 11). Their concatenation equals 211, which is less than 743, so the pair is tiny;
+(14, 7). Their concatenation equals 147, which is less than 743, so the pair is tiny.
+There are 4 tiny pairs during the iteration, so the answer is 4.
+
+Input/Output
+
+[execution time limit] 3 seconds (java)
+
+[input] array.integer a
+
+An array of non-negative integers.
+
+Guaranteed constraints:
+0 ≤ a.length ≤ 105,
+0 ≤ a[i] ≤ 104.
+
+[input] array.integer b
+
+An array of non-negative integers.
+
+Guaranteed constraints:
+b.length = a.length,
+0 ≤ b[i] ≤ 104.
+
+[input] integer k
+
+An integer to compare concatenated pairs with.
+
+Guaranteed constraints:
+0 ≤ k ≤ 109.
+
+[output] integer
+
+The number of tiny pairs during the iteration.
+
+[Java] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+// 
+// Globals declared here will cause a compilation error,
+// declare variables inside the function instead!
+String helloWorld(String name) {
+    System.out.println("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+
+1234
+int solution(int[] a, int[] b, int k) {
+
+}
+
+TESTS
+CUSTOM TESTS
+MORE
+0/300
+b : int[]
+
+SOLUTION
+public class LC {
+	static int[] solution(int k, int[] a, int[] b) {
+		int tinyPairs = 0;
+		for(int x=0;x<a.length;x++) {
+			//convert elements of into a string
+	    	String a1 = String.valueOf(a[x]);
+	    	//convert elements of into a string (starts from right to left)
+	    	String b1 = String.valueOf(b[b.length - 1 - x]);
+	    	int n = b1.length();
+	    	int pow = 1;
+	    	for(int j=1; j<=n;j++) {//when n=1, pow = 10; n=2, pow = 10*10=100
+	    		pow = pow*10;
+	    	}
+	    	//when b1's length is 2 (2 digits in a number), a's element will be in 100th place: a_ _
+	    	int aVal = pow*a[x];
+	    	int pair = aVal+ b[b.length - 1 -x];
+	    	System.out.println(pair);
+	    	if(pair < k) {
+	    		tinyPairs++;
+	    	}
+	    }
+		return tinyPairs;
+		System.out.println(tinyPairs);
+	}
+
+	public static void main(String[] args) {
+		int a[] = {1,2,3};
+		int b[] = {10,2,3};
+		solution(310,a,b);	
+	}
+}
+time" O(n^2)
+
+Minesweeper is a popular single-player computer game. The goal is to locate mines within a rectangular grid of cells. At the start of the game, all of the cells are concealed. On each turn, the player clicks on a blank cell to reveal its contents, leading to the following result:
+
+If there's a mine on this cell, the player loses and the game is over;
+Otherwise, a number appears on the cell, representing how many mines there are within the 8 neighbouring cells (up, down, left, right, and the 4 diagonal directions);
+If the revealed number is 0, each of the 8 neighbouring cells are automatically revealed in the same way.
+demonstration
+
+You are given a boolean matrix field representing the distribution of bombs in the rectangular field. You are also given integers x and y, representing the coordinates of the player's first clicked cell - x represents the row index, and y represents the column index, both of which are 0-based.
+
+Your task is to return an integer matrix of the same dimensions as field, representing the resulting field after applying this click. If a cell remains concealed, the corresponding element should have a value of -1.
+
+It is guaranteed that the clicked cell does not contain a mine.
+
+Example
+
+For
+field = [[false, true, true],
+         [true, false, true],
+         [false, false, true]]
+x = 1, and y = 1, the output should be
+
+solution(field, x, y) = [[-1, -1, -1],
+                                 [-1, 5, -1],
+                                 [-1, -1, -1]]
+example
+
+There are 5 neighbors of the cell (1, 1) which contain a mine, so the value in (1, 1) should become 5, and the other elements of the resulting matrix should be -1 since no other cell would be expanded.
+
+For
+field = [[true, false, true, true, false],
+         [true, false, false, false, false],
+         [false, false, false, false, false],
+         [true, false, false, false, false]]
+x = 3, and y = 2, the output should be
+
+solution(field, x, y) = [[-1, -1, -1, -1, -1],
+                                 [-1, 3, 2, 2, 1],
+                                 [-1, 2, 0, 0, 0],
+                                 [-1, 1, 0, 0, 0]]
+example
+
+Since the value in the cell (3, 2) is 0, all of its neighboring cells ((2, 1), (2, 2), (2, 3), (3, 1), and (3, 3)) are also revealed. Since the value in the cell (2, 2) is also 0, its neighbouring cells (1, 1), (1, 2) and (1, 3) are revealed, and since the value in cell (2, 3) is 0, its neighbours (1, 4), (2, 4), and (3, 4) are also revealed. The cells (3, 3), (2, 4), and (3, 4) also contain the value 0, but since all of their neighbours have already been revealed, no further action is required.
+
+Input/Output
+
+[execution time limit] 3 seconds (java)
+
+[input] array.array.boolean field
+
+A rectangular matrix representing the locations of the mines in the game field.
+
+Guaranteed constraints:
+2 ≤ field.length ≤ 100,
+2 ≤ field[i].length ≤ 100.
+
+[input] integer x
+
+The row number of the cell which is clicked (0-based).
+
+Guaranteed constraints:
+0 ≤ x < field.length.
+
+[input] integer y
+
+The column number of the cell which is clicked (0-based).
+
+Guaranteed constraints:
+ 0 ≤ y < field[0].length.
+
+[output] array.array.integer
+
+The expanded matrix after the click.
+
+[Java] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+// 
+// Globals declared here will cause a compilation error,
+// declare variables inside the function instead!
+String helloWorld(String name) {
+    System.out.println("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+-------------------------------------------------------------------------
+You are given three arrays of integers a, b, and c. Your task is to find the longest contiguous subarray of a containing only elements that appear in b but do not appear in c.
+
+Return this longest subarray. If there is more than one longest subarray satisfying these conditions, return any of these possible subarrays.
+
+Example
+
+For a = [2, 1, 7, 1, 1, 5, 3, 5, 2, 1, 1, 1], b = [1, 3, 5], and c = [2, 3], the output can be solution(a, b, c) = [1, 1, 5].
+
+There is no contiguous subarray of length 4 satisfying all the requirements:
+
+a[0..3] = [2, 1, 7, 1] contains the number a[2] = 7, which doesn't appear in b;
+a[1..4] = [1, 7, 1, 1] contains the number a[2] = 7, which doesn't appear in b;
+a[2..5] = [7, 1, 1, 5] contains the number a[2] = 7, which doesn't appear in b;
+a[3..6] = [1, 1, 5, 3] contains the number a[6] = 3, which does appear in c (which is prohibited);
+a[4..7] = [1, 5, 3, 5] contains the number a[6] = 3, which does appear in c;
+a[5..8] = [5, 3, 5, 2] contains the number a[6] = 3, which does appear in c;
+a[6..9] = [3, 5, 2, 1] contains the number a[6] = 3, which does appear in c;
+a[7..10] = [5, 2, 1, 1] contains the number a[8] = 2, which doesn't appear in b;
+a[8..11] = [2, 1, 1, 1] contains the number a[8] = 2, which doesn't appear in b.
+There are two possible contiguous subarrays of length 3 satisfying all the requirements:
+
+a[3..5] = [1, 1, 5]: both numbers 1 and 5 appear in b, and both of these numbers don't appear in c.
+a[9..11] = [1, 1, 1]: the number 1 appears in b, and doesn't appear in c.
+example
+
+As you can see, the longest consecutive subarrays of a that fulfill the conditions are a[3..5] = [1, 1, 5] and a[9..11] = [1, 1, 1]. Both of these answers are acceptable.
+
+For a = [1, 2, 3], b = [], and c = [], the output should be solution(a, b, c) = [].
+
+Since b is empty, there are no elements that appear in b and not c. So the answer is [].
+
+Input/Output
+
+[execution time limit] 3 seconds (java)
+
+[input] array.integer a
+
+The first array of integers.
+
+Guaranteed constraints:
+0 ≤ a.length ≤ 105,
+-109 ≤ a[i] ≤ 109.
+
+[input] array.integer b
+
+The second array of integers.
+
+Guaranteed constraints:
+0 ≤ b.length ≤ 105,
+-109 ≤ b[i] ≤ 109.
+
+[input] array.integer c
+
+The third array of integers.
+
+Guaranteed constraints:
+0 ≤ c.length ≤ 105,
+-109 ≤ c[i] ≤ 109.
+
+[output] array.integer
+
+Any of the longest contiguous subarrays of a which consists only of elements from b that don't appear in c.
+
+[Java] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+// 
+// Globals declared here will cause a compilation error,
+// declare variables inside the function instead!
+String helloWorld(String name) {
+    System.out.println("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+------------------------------------------------------------------------------------------------
+test 2
+Given an empty array that should contain integers numbers, your task is to process a list of queries on it. Specifically, there are two types of queries:
+
+    "+x" - add number x to numbers. numbers may contain multiple instances of the same integer.
+    "-x" - remove all the instances of number x from numbers
+
+After processing each query, record the number of pairs in numbers with a difference equal to a given diff. The final output should be an array of such values for all queries.
+
+Notes:
+
+    All numbers in queries are guaranteed to be in the range of [-109, 109]. It is also guaranteed that for every "-x" query, the specified number x exists in numbers.
+    It is guaranteed that the answer for each query fits into a 32-bit integer type.
+
+Example
+
+    For queries = ["+4", "+5", "+2", "-4"] and diff = 1, the output should be solution(queries, diff) = [0, 1, 1, 0].
+        First, process queries[0] = "+4" and add 4 to numbers, resulting in numbers = [4]. There are no pairs with diff = 1, so append 0 to the output.
+        Next, process queries[1] = "+5" and add 5 to numbers, resulting in numbers = [4, 5]. The numbers 4 and 5 have difference diff = 1, so append 1 to the output.
+        Process queries[2] = "+2" and add 2 to numbers, resulting in numbers = [4, 5, 2]. The number of pairs with difference diff = 1 remains the same, so append 1 to the result.
+        Process queries[3] = "-4" and remove all instances of number 4, resulting in numbers = [5, 2]. There is no pair with difference diff = 1, so append 0 to the output.
+
+    Finally, the output is [0, 1, 1, 0].
+
+    For queries = ["+2", "+2", "+4", "+3", "-2"] and diff = 1, the output should be solution(queries, diff) = [0, 0, 0, 3, 1].
+        First, process queries[0] = "+2" and add 2 to numbers, resulting in numbers = [2]. There are no pairs with diff = 1, so append 0 to the output.
+        Process queries[1] = "+2" and add 2 to numbers, resulting in numbers = [2, 2]. There is no pair with difference diff = 1, so append 0 to the output.
+        Process queries[2] = "+4" and add 4 to numbers, resulting in numbers = [2, 2, 4]. There is no pair with difference diff = 1, so append 0 to the output.
+        Process queries[3] = "+3" and add 3 to numbers, resulting in numbers = [2, 2, 4, 3]. There are 3 pairs with diff = 1 - (2, 3), (2, 3), and (4, 3), so append 3 to the output.
+        Process queries[4] = "-2" and remove all instances of 2, resulting in numbers = [4, 3]. Now, there is only a single pair (4, 3) with diff = 1, so append 1 to the output.
+
+    The final output is [0, 0, 0, 3, 1].
+
+Input/Output
+
+    [execution time limit] 3 seconds (java)
+
+    [input] array.string queries
+
+    An array of strings representing queries in the format described above. It is guaranteed that all added and removed numbers are in the range of -109, 109. It is also guaranteed that for every removal query, the removed number exists in the current numbers array.
+
+    Guaranteed constraints:
+    1 ≤ queries.length ≤ 105.
+
+    [input] integer diff
+
+    A positive integer value representing the expected difference in pairs of numbers.
+
+    Guaranteed constraints:
+    1 ≤ diff ≤ 109.
+
+    [output] array.integer
+
+    After processing each query, record the number of pairs in numbers with a difference equal to diff. It is guaranteed that the number will always fit into a 32-bit integer type. Return an array of such values for all queries.
+-----------------------------------------------
+codewriting
+
+Imagine that you are formatting the text that will appear on newspaper page, which requires you to format the text on the page. The text is provided to you in the following format:
+
+    paragraphs is an array of paragraphs, where each paragraph is represented by an array containing chunks of text.
+    width represents the maximum number of characters that can fit on each line of the newspaper page.
+
+Your task is to produce a newspaper page according to the following specifications:
+
+    For each paragraph paragraphs[i], start a new line and add the text from paragraphs[i][j] in order. When the portions of text is together on a line, they should be separated by 1 space.
+    You cannot break up the portions of text. So, if adding the next portion would cause you to exceed width, you will need to start a new line and add that text there.
+    You may end up with leftover space on a line if the size of the text (including separating spaces) is less than width. If this happens, align the text to the center by adding spaces around it:
+        If the amount of leftover space on the line is even, add an equal number of spaces before and after the text.
+        If the amount of leftover space on the line is odd, add an equal number of spaces before and after the text. You'll have an extra space left over; add it after the text.
+    Include a rectangular border of asterisks (* character) around the top, bottom, left, and right edges of the resulting newspaper page. These characters don't count towards the width but are added for aesthetic reasons.
+
+Return the resulting newspaper page as an array of strings, in which the ith string represents the ith line of the newspaper page. It is guaranteed that it will be possible to format the input paragraphs into a newspaper page as described.
+
+Example
+
+For paragraphs = [["hello", "world"], ["How", "areYou", "doing"], ["Please look", "and align", "to center"]] and width = 16, the output should be
+
+solution(paragraphs, width) = ["******************",
+                               "*  hello world   *",
+                               "*How areYou doing*",
+                               "*  Please look   *",
+                               "*   and align    *",
+                               "*   to center    *",
+                               "******************"]
+
+Let's consider all paragraphs:
+
+    paragraphs[0] = ["hello", "world"]
+        Both portions of text fit on one line with a combined length of 11, including the separating space.
+        Since width = 16, there are 16 - 11 = 5 leftover spaces on the line. We'll need to align the text to center.
+        Since 5 is odd, the line should have 2 leading spaces and 3 trailing spaces.
+        So the result for this paragraph is the line "  hello world   ".
+    paragraphs[1] = ["How", "areYou", "doing"]
+        All three portions of text fit on one line with a length of 16, including separating spaces.
+        There are no leftover spaces, so the result is "How areYou doing".
+    paragraphs[2] = ["Please look", "and align", "to center"]
+        The text "Please look" and "and align" are too long to combine (the result would have a length of 21 > 16), so we'll start a new line with "and align".
+        Furthermore, the portions of text "and align" and "to center" would have a combined length of 19 > 16 which is also too long, so "to center" will also be on a new line.
+        Per line, the amount of leftover space is 5, 7, and 7. The result of this paragraph is therefore:
+
+    "  Please look   "
+    "   and align    "
+    "   to center    "
+
+To create the border, add an asterisk (* character) to the beginning and end of each line, then add a string of width + 2 asterisks before the first line and after the last line.
+
+Input/Output
+
+    [execution time limit] 3 seconds (java)
+
+    [input] array.array.string paragraphs
+
+    An array of arrays of strings representing text for the newspaper page.
+
+    Guaranteed constraints:
+    1 ≤ paragraphs.length ≤ 20,
+    1 ≤ paragraphs[i].length ≤ 10,
+    1 ≤ paragraphs[i][j].length ≤ width.
+
+    [input] integer width
+
+    An integer representing the width of the newspaper page.
+
+    Guaranteed constraints:
+    5 ≤ width ≤ 50.
+
+    [output] array.string
+
+    Return the resulting newspaper page as an array of strings, in which the ith string represents the ith line of the newspaper page.
+----------------------------------------------------------
+codewriting
+
+Given a schedule of bus departures and the current time, find out how many minutes ago the last bus left. If the first bus for the day has yet to leave, return -1.
+
+Each time is represented as HH:MM (in the 24-hour format). Bus departure times are sorted in chronological order.
+
+Please assume that if a bus is scheduled to leave at the current time, it hasn't left yet.
+
+Example
+
+    For schedule = ["12:30", "14:00", "19:55"] and time = "14:30", the output should be solution(schedule, time) = 30.
+
+    Explanation:
+    The current time is "14:30". The last bus left at "14:00", so the answer is 30 minutes ago.
+
+    For schedule = ["00:00", "14:00", "19:55"] and time = "00:00", the output should be solution(schedule, time) = -1.
+
+    Explanation:
+    No buses left before "00:00" (the bus scheduled to leave at "00:00" hasn't left yet), so the answer is -1.
+
+    For schedule = ["12:30", "14:00", "19:55"] and time = "14:00", the output should be solution(schedule, time) = 90.
+
+    Explanation:
+    The current time is "14:00". The last bus left at "12:30" (the bus scheduled to leave at "14:00" hasn't left yet), so the answer is 90 minutes ago.
+
+Input/Output
+
+    [execution time limit] 3 seconds (java)
+
+    [input] array.string schedule
+
+    An array of strings representing the bus departure times in HH:MM format.
+
+    Guaranteed constraints:
+    3 ≤ schedule.length ≤ 100.
+
+    [input] string time
+
+    The current time in HH:MM format.
+
+    [output] integer
+
+    The number of minutes between the current time and the time when the last bus has left, or -1 if there weren't any buses that left before the current time.
+

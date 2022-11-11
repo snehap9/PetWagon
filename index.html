@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="zoomView" content="width=device-width, initial-scale=1.0">
+    <title>PetWagon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />-->
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="C:\Users\Ahens\Desktop\PetWagon\images\web-logo.png" width="130px">
+                </div>
+                <nav>
+                    <ul id="menuItems">
+                        <li><a href="home">Home</a></li>
+                        <li><a href="products">Products</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="account">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\cart.png" width="40px" height="40px">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\menu.png" class="menu" onclick="menuToggle();">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Retail Therapy For Your Pets!</h1>
+                    <p id="demo"></p>
+                    <p>Every animal deserves the best of things in life, there is something for every pet. Shop guilt-free!</p>
+                    <a href="checkitout" class="btn">Check it out!</a>
+                </div>
+                <div class="col-2">
+                    <img src="C:\Users\Ahens\Desktop\PetWagon\images\imag.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---featured categories-->
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="C:\Users\Ahens\Desktop\PetWagon\images\category-1.jpg" alt="Dogs">
+                </div>
+                <div class="col-3">
+                    <img src="C:\Users\Ahens\Desktop\PetWagon\images\category-2.jpg" alt="Cats">
+                </div>
+                <div class="col-3">
+                    <img src="C:\Users\Ahens\Desktop\PetWagon\images\category-3.jpg" alt="Birds">
+                </div>
+            </div>
+        </div>
+    </div>
+<!--featured products-->
+<div class="small-container">
+    <h2 class="title">Featured Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-1.png">
+            <h4>Pedigree Adult - Chicken, Rice, and Veggies</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-half-o checked"></span>
+            </div>
+                <p>$25.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-2.png">
+            <h4>Purple Harness for Dogs</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-half-o checked"></span>
+                <span class="fa fa-star-o checked"></span>
+            </div>
+                <p>$18.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-8.png">
+            <h4>Kitty Litter Box</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-o checked"></span>
+            </div>
+                <p>$25.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-4.png">
+            <h4>Portable Bird Cage</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-o checked"></span>
+                <span class="fa fa-star-o checked"></span>
+            </div>
+                <p>$145.00</p>
+        </div>
+    </div>
+    <h2 class="title">New Arrivals</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-5.png">
+            <h4>Cage Cleaner Spray</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-o checked"></span>
+            </div>
+                <p>$12.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-6.png">
+            <h4>Songbird Seeds</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-half-o checked"></span>
+                <span class="fa fa-star-o checked"></span>
+            </div>
+                <p>$22.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-7.png">
+            <h4>Natural Chew Treats</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-o checked"></span>
+                <span class="fa fa-star-o checked"></span>
+            </div>
+                <p>$10.50</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\Ahens\Desktop\PetWagon\images\product-12.png">
+            <h4>Cat Scratching Post</h4>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-half-o checked"></span>
+            </div>
+                <p>$35.00</p>
+        </div>
+    </div>
+</div>
+<!----offer--->
+<div class="offer">
+    <div class="small container">
+        <div class="row">
+            <div class="col-2">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\exclusive.png" class="offer-img">
+            </div>
+            <div class="col-2">
+                <p>Exclusive Offer</p>
+                <h1>Leo's Loo Too Automatic Litter Box</h1>
+                <small>Leo's Loo automatic self-cleaning cat litter box detects each time your cat visits and automatically cleans up afterwards. The litter box can also be controlled remotely through Smarty Pear app.</small>
+                <a href="buynow" class="btn">Buy Now &#8594</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--recommendations from users-->
+<div class="recommendations">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Always a great experience! PetWagon goes above and beyond to meet your pet's needs. They truly care about their customers and are very reliable.</p>
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\user-1.jpg">
+                <h3>Heidi Green</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Great prices, quality items, fast shipping, and great customer service. I highly recommend PetWagon.</p>
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-half-o checked"></span>
+                </div>
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\user-2.jpg">
+                <h3>Mathew Jones</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>PetWagon usually carries everything I need for my dog. Their service is great! They respond to emails very quickly compared to other similar online businesses.</p>
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-o checked"></span>
+                </div>
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\user-3.jpg">
+                <h3>Hee-Young Lee</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Affiliates-->
+<div class="affiliates">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\logo-1.png">
+            </div>
+            <div class="col-5">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\logo-2.png">
+            </div>
+            <div class="col-5">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\logo-3.png">
+            </div>
+            <div class="col-5">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\logo-4.png">
+            </div>
+            <div class="col-5">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\logo-5.png">
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="fcol-1">
+                <h3>Download Our App.</h3>
+                    <p>Our app is now available on Google PlayStore and App Store.</p>
+                    <div class="store-download">
+                        <img src="C:\Users\Ahens\Desktop\PetWagon\images\app-download.png">
+                    </div>
+            </div>
+            <div class="fcol-2">
+                <img src="C:\Users\Ahens\Desktop\PetWagon\images\app-logo.png">
+            </div>
+            <div class="fcol-3">
+                <h3><b>Connect With Us</b></h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                </ul> 
+            </div>
+            <div class="fcol-4">
+                <h3><b>Quick Links</b></h3>
+                <ul>
+                    <li>Orders</li>
+                    <li>Returns Center</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright - Personal Project - Sneha P</p>
+    </div>
+</div>
+<!---JavaScript for toggling menu--->
+<script>
+    
+    document.getElementById("menuItems").style.maxHeight = "0px";
+    var menuItems = document.getElementById("menuItems");
+    menuItems.style.maxHeight = "0px";
+    function menuToggle(){
+        if(menuItems.style.maxHeight == "0px"){
+            menuItems.style.maxHeight = "200px";
+        }
+        else{
+            menuItems.style.maxHeight = "0px";
+        }
+    }
+    
+</script>
+</body>
+</html>
